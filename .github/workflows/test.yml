@@ -1,0 +1,15 @@
+
+name: test
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        job: [job1, job2, job3]
+    runs-on: ubuntu-latest
+
+    steps:
+     - run: exit $((RANDOM % 2))
